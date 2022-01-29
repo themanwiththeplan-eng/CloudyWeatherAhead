@@ -21,12 +21,13 @@
     </div>
     <div class="container-fluid d-block">
         <div class="row col-3">
-            <form action="get">
-                <input class="form-control" type="text" placeholder="Search for a City" aria-label="default input example"> 
-                <input class="btn btn-primary w-100 mt-2" type="submit" value="Search">
+            <form>
+                <input class="form-control" id="city" type="text" placeholder="Search for a City" aria-label="default input example"> 
+            
+                <input class="btn btn-primary w-100 mt-2" id="search" type="submit" value="Search">
                 <hr/>
-                <div class="d-block">
-                    <ul>
+                <div class="d-flex">
+                    <ul id="cityList">
                         
                     </ul>
                 </div>
@@ -60,7 +61,7 @@
               <div class="mt-4">
                   <h4>5-Day Forecast:</h4>
               </div>
-              <div class="col-2 flex-row d-flex mt-3" style="height: 300px; padding: 2px 2px;">
+              <div class="col-12 col-md-6 col-lg-9 flex-row d-flex mt-3" style="height: 300px; padding: 2px 2px;">
                 <div class="card col-2" style="width: 16rem;">
                     <img src="..." class="card-img-top" alt="...">
                     <div class="card-body">
