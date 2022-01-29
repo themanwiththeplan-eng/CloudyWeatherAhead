@@ -25,12 +25,23 @@ $(document).ready(function(){
             cityListItem.attr("class", "mt-2");
             const input = $('<input>').attr("type", "button");
             input.attr("value", citySearch);
-            
+            input.attr("id", "storageItem");
             cityListItem.append(input);
             $("#cityList").append(cityListItem);
             
             array.push(citySearch);
             localStorage.setItem("Cities", JSON.stringify(array));
+
+            const oneCallKey = `742fafd71154e9ffb3d97a50d911c2a6`
+            let oneCallUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=hourly,minutely,alerts&appid=${oneCallKey}`
+
+            $.ajax({
+                method: 'GET',
+                url: oneCallUrl
+
+            }).then(function(response){
+                console.log(response);
+            })
         })
     })
 })
