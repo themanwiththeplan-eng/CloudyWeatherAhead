@@ -43,7 +43,8 @@ $(document).ready(function(){
                 console.log(response);
                 let currentDate  = moment().format("MM/DD/YYYY");
                 const cityName = $("#cityName");
-                cityName.text(`City: ${citySearch} ${currentDate}`);
+                let icon = response.current.weather[0].icon;
+                cityName.text(`City: ${citySearch} ${currentDate} ${icon}`);
                 const temp = $("#temp");
                 let temperature = response.current.temp;
                 temp.text(`Temp: ${temperature}\xB0F`)
@@ -67,6 +68,21 @@ $(document).ready(function(){
                     uvi.css("background-color", "red");
                 }else{
                     uvi.css("background-color", "purple");
+                }
+                // fix logic of for loop tomorrow
+                for(let i = 0; i < 5; i++){
+                    const card = $("<div>");
+                    card.attr("class", "card col-2");
+                    card.attr("style", "width: 16rem;")
+                    const cardBody = $("<div>");
+                    cardBody.attr("class", "card-body");
+                    const p = $("<p>");
+                    let dailyTemp = response.daily[i].temp.day;
+                    p.text(`Temp: ${dailyTemp}\xB0F`);
+                    cardBody.append(p);
+                    card.append(cardBody);
+                    $("#cards").append(card);
+
                 }
             })
         })
