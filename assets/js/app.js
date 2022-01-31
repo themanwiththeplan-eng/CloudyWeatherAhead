@@ -1,4 +1,13 @@
 let array = [];
+// const div = $("<div>").attr("class", "card-body");
+// const p = $("<p>");
+// const p1 = $("<p>");
+// const p2 = $("<p>");
+// const cardOne = $("#cardOne")
+// const cardTwo = $("#cardTwo")
+// const cardThree = $("#cardThree")
+// const cardFour = $("#cardFour")
+// const cardFive = $("#cardFive")
 
 $(document).ready(function(){
     const geoKey = `86063e3b946234cce4426744a6abb72f`;
@@ -70,32 +79,112 @@ $(document).ready(function(){
                     uvi.css("background-color", "purple");
                 }
                 // fix logic of for loop tomorrow
-                
-                function x(){
+                // for(let i = 0; i < 5; i++){
+                //     p;
+                //     p1;
+                //     p2;
+                //     let dailyTemp = response.daily[i].temp.day;
+                //     let dailyWind = response.daily[i].wind_speed;
+                //     let dailyHumid = response.daily[i].humidity;
+                //     p.text(`Temp: ${dailyTemp}\xB0F`);
+                //     p1.text(`Wind: ${dailyWind}`);
+                //     p2.text(`Humidity: ${dailyHumid}`);
+                //     div;
+                //     div.append(p);
+                //     div.append(p1);
+                //     div.append(p2);
                     
-                for(let i = 0; i < 5; i++){
-                    const card = $("<div>");
-                    card.attr("class", "card col-2");
-                    card.attr("style", "width: 16rem; background-color: skyblue;")
-                    const cardBody = $("<div>");
-                    cardBody.attr("class", "card-body");
+                // }
+
+                function cardOne(){
+                    const cardOne = $("#cardOne")
+                    cardOne.empty();
                     const p = $("<p>");
-                    let dailyTemp = response.daily[i].temp.day;
-                    p.text(`Temp: ${dailyTemp}\xB0F`);
-                    cardBody.append(p);
-                    card.append(cardBody);
-                    $("#cards").append(card);
-                    const p1 = $("<p>")
-                    let dailyWind  = response.daily[i].wind_speed;
-                    p1.text(`Wind: ${dailyWind} MPH`)
-                    cardBody.append(p1);
-                    let dailyHumid = response.daily[i].humidity;
-                    const p2 = $("<p>")
-                    cardBody.append(p2);
-                    p2.text(`Humidity: ${dailyHumid}%`);
-                }
-            }
-                searchBtn.on('click',x());
+                    const p1 = $("<p>");
+                    const p2 = $("<p>");
+                    let tempOne = response.daily[0].temp.day;
+                    let windOne = response.daily[0].wind_speed;
+                    let humidOne = response.daily[0].humidity;
+                    p.text(`Temp: ${tempOne}\xB0F`)
+                    p1.text(`Wind: ${windOne} MPH`)
+                    p2.text(`Humidity: ${humidOne}%`)
+                    cardOne.append(p)
+                    cardOne.append(p1)
+                    cardOne.append(p2)
+                    }
+                    function cardTwo(){
+                        const cardTwo = $("#cardTwo")
+                        cardTwo.empty();
+                        const p = $("<p>");
+                        const p1 = $("<p>");
+                        const p2 = $("<p>");
+                        let tempTwo = response.daily[1].temp.day;
+                        let windTwo = response.daily[1].wind_speed;
+                        let humidTwo = response.daily[1].humidity;
+                        p.text(`Temp: ${tempTwo}\xB0F`)
+                        p1.text(`Wind: ${windTwo} MPH`)
+                        p2.text(`Humidity: ${humidTwo}%`)
+                        cardTwo.append(p)
+                        cardTwo.append(p1)
+                        cardTwo.append(p2)
+                        }
+                        function cardThree(){
+                            const cardThree = $("#cardThree")
+                            cardThree.empty();
+                            const p = $("<p>");
+                            const p1 = $("<p>");
+                            const p2 = $("<p>");
+                            let tempTwo = response.daily[2].temp.day;
+                            let windTwo = response.daily[2].wind_speed;
+                            let humidTwo = response.daily[2].humidity;
+                            p.text(`Temp: ${tempTwo}\xB0F`)
+                            p1.text(`Wind: ${windTwo} MPH`)
+                            p2.text(`Humidity: ${humidTwo}%`)
+                            cardThree.append(p)
+                            cardThree.append(p1)
+                            cardThree.append(p2)
+                            }
+                            function cardFour(){
+                                const cardFour = $("#cardFour")
+                                cardFour.empty();
+                                const p = $("<p>");
+                                const p1 = $("<p>");
+                                const p2 = $("<p>");
+                                let tempTwo = response.daily[3].temp.day;
+                                let windTwo = response.daily[3].wind_speed;
+                                let humidTwo = response.daily[3].humidity;
+                                p.text(`Temp: ${tempTwo}\xB0F`)
+                                p1.text(`Wind: ${windTwo} MPH`)
+                                p2.text(`Humidity: ${humidTwo}%`)
+                                cardFour.append(p)
+                                cardFour.append(p1)
+                                cardFour.append(p2)
+                                }
+                                function cardFive(){
+                                    const cardFive = $("#cardFive")
+                                    cardFive.empty();
+                                    const p = $("<p>");
+                                    const p1 = $("<p>");
+                                    const p2 = $("<p>");
+                                    let tempTwo = response.daily[4].temp.day;
+                                    let windTwo = response.daily[4].wind_speed;
+                                    let humidTwo = response.daily[4].humidity;
+                                    p.text(`Temp: ${tempTwo}\xB0F`)
+                                    p1.text(`Wind: ${windTwo} MPH`)
+                                    p2.text(`Humidity: ${humidTwo}%`)
+                                    cardFive.append(p)
+                                    cardFive.append(p1)
+                                    cardFive.append(p2)
+                                    }
+                            
+                   searchBtn.on('click', cardOne());
+                   searchBtn.on('click', cardTwo());
+                   searchBtn.on('click', cardThree());
+                   searchBtn.on('click', cardFour());
+                   searchBtn.on('click', cardFive());
+                
+            
+                
             })
         })
     })
