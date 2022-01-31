@@ -32,9 +32,9 @@ $(document).ready(function(){
             let lon = response[0].lon;
             const cityListItem = $("<li>").attr("id", "cityListItem")
             cityListItem.attr("class", "mt-2");
-            const input = $('<input>').attr("type", "button");
+            var input = $('<input>').attr("type", "button");
             input.attr("value", citySearch);
-            input.attr("class", "storageItem");
+            input.attr("class", "clickable");
             cityListItem.append(input);
             $("#cityList").append(cityListItem);
             
@@ -44,6 +44,10 @@ $(document).ready(function(){
             const oneCallKey = `742fafd71154e9ffb3d97a50d911c2a6`
             let oneCallUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=hourly,minutely,alerts&units=imperial&appid=${oneCallKey}`
 
+            $(".clickable").on('click', function(){
+                city.val(input.val())
+                searchBtn.click();
+            })
             $.ajax({
                 method: 'GET',
                 url: oneCallUrl
@@ -222,14 +226,14 @@ $(document).ready(function(){
                 input.attr("value", cities[i]);
                 cityListItem.append(input);
                 cityListItem.attr("class", "mt-2");
-                input.attr("class", "clickable")
+                input.attr("class", "storageItem")
                 $("#cityList").append(cityListItem);
         }
         }
-        $(".clickable").on('click', function(){
+        $(".storageItem").on('click', function(){
             city.val(input.val());
             searchBtn.click();
         })
     }
-    $().ready(getItem);
+    $(document).ready(getItem);
 })
