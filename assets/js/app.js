@@ -44,10 +44,10 @@ $(document).ready(function(){
             const oneCallKey = `742fafd71154e9ffb3d97a50d911c2a6`
             let oneCallUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=hourly,minutely,alerts&units=imperial&appid=${oneCallKey}`
 
-            $(".clickable").on('click', function(){
-                city.val(input.val())
-                searchBtn.click();
-            })
+            // $(".clickable").on('click', function(){
+            //     city.val(input.val())
+            //     searchBtn.click();
+            // })
             $.ajax({
                 method: 'GET',
                 url: oneCallUrl
