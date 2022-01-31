@@ -6,7 +6,7 @@ $(document).ready(function(){
     const searchBtn = $("#search");
     const city = $("#city");
     
-
+    
     searchBtn.on('click',function(event){
         event.preventDefault();
         let citySearch = city.val();
@@ -70,10 +70,13 @@ $(document).ready(function(){
                     uvi.css("background-color", "purple");
                 }
                 // fix logic of for loop tomorrow
+                
+                function x(){
+                    
                 for(let i = 0; i < 5; i++){
                     const card = $("<div>");
                     card.attr("class", "card col-2");
-                    card.attr("style", "width: 16rem;")
+                    card.attr("style", "width: 16rem; background-color: skyblue;")
                     const cardBody = $("<div>");
                     cardBody.attr("class", "card-body");
                     const p = $("<p>");
@@ -82,8 +85,17 @@ $(document).ready(function(){
                     cardBody.append(p);
                     card.append(cardBody);
                     $("#cards").append(card);
-
+                    const p1 = $("<p>")
+                    let dailyWind  = response.daily[i].wind_speed;
+                    p1.text(`Wind: ${dailyWind} MPH`)
+                    cardBody.append(p1);
+                    let dailyHumid = response.daily[i].humidity;
+                    const p2 = $("<p>")
+                    cardBody.append(p2);
+                    p2.text(`Humidity: ${dailyHumid}%`);
                 }
+            }
+                searchBtn.on('click',x());
             })
         })
     })
