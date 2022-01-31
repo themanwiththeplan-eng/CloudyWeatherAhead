@@ -34,7 +34,7 @@ $(document).ready(function(){
             cityListItem.attr("class", "mt-2");
             const input = $('<input>').attr("type", "button");
             input.attr("value", citySearch);
-            input.attr("id", "storageItem");
+            input.attr("class", "storageItem");
             cityListItem.append(input);
             $("#cityList").append(cityListItem);
             
@@ -208,4 +208,28 @@ $(document).ready(function(){
             })
         })
     })
+    
+    function getItem(){
+        let cities = JSON.parse(localStorage.getItem("Cities"));
+        
+        if(localStorage.length == 0){
+            return;
+        }else{
+            for(let i = 0; i < cities.length; i++){
+                console.log(cities[i]);
+                const cityListItem = $("<li>");
+                var input = $("<input>").attr("type", "button");
+                input.attr("value", cities[i]);
+                cityListItem.append(input);
+                cityListItem.attr("class", "mt-2");
+                input.attr("class", "clickable")
+                $("#cityList").append(cityListItem);
+        }
+        }
+        $(".clickable").on('click', function(){
+            city.val(input.val());
+            searchBtn.click();
+        })
+    }
+    $().ready(getItem);
 })
