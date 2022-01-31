@@ -97,8 +97,12 @@ $(document).ready(function(){
                 // }
 
                 function cardOne(){
+                    let oneDayForward = new moment().add(1, "day");
+                    const dateOne = $("<p>")
                     const cardOne = $("#cardOne")
                     cardOne.empty();
+                    cardOne.append(dateOne);
+                    dateOne.text(oneDayForward.format("MM/DD/YYYY"))
                     const p = $("<p>");
                     const p1 = $("<p>");
                     const p2 = $("<p>");
@@ -115,6 +119,10 @@ $(document).ready(function(){
                     function cardTwo(){
                         const cardTwo = $("#cardTwo")
                         cardTwo.empty();
+                        let twoDayForward = new moment().add(2, "day");
+                        const dateTwo = $("<p>")
+                        dateTwo.text(twoDayForward.format("MM/DD/YYYY"))
+                        cardTwo.append(dateTwo);
                         const p = $("<p>");
                         const p1 = $("<p>");
                         const p2 = $("<p>");
@@ -131,6 +139,10 @@ $(document).ready(function(){
                         function cardThree(){
                             const cardThree = $("#cardThree")
                             cardThree.empty();
+                            let threeDayForward = new moment().add(3, "day");
+                            const dateThree = $("<p>")
+                            dateThree.text(threeDayForward.format("MM/DD/YYYY"))
+                            cardThree.append(dateThree);
                             const p = $("<p>");
                             const p1 = $("<p>");
                             const p2 = $("<p>");
@@ -147,6 +159,10 @@ $(document).ready(function(){
                             function cardFour(){
                                 const cardFour = $("#cardFour")
                                 cardFour.empty();
+                                let fourDayForward = new moment().add(4, "day");
+                                const dateFour = $("<p>")
+                                dateFour.text(fourDayForward.format("MM/DD/YYYY"))
+                                cardFour.append(dateFour);
                                 const p = $("<p>");
                                 const p1 = $("<p>");
                                 const p2 = $("<p>");
@@ -163,6 +179,10 @@ $(document).ready(function(){
                                 function cardFive(){
                                     const cardFive = $("#cardFive")
                                     cardFive.empty();
+                                    let fiveDayForward = new moment().add(5, "day");
+                                    const dateFive = $("<p>")
+                                    dateFive.text(fiveDayForward.format("MM/DD/YYYY"))
+                                    cardFive.append(dateFive);
                                     const p = $("<p>");
                                     const p1 = $("<p>");
                                     const p2 = $("<p>");
