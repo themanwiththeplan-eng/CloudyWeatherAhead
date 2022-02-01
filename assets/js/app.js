@@ -228,12 +228,14 @@ $(document).ready(function(){
                 cityListItem.attr("class", "mt-2");
                 input.attr("class", "storageItem")
                 $("#cityList").append(cityListItem);
-        }
+            }
         }
         $(".storageItem").on('click', function(){
             city.val(input.val());
             searchBtn.click();
+            
         })
     }
     $(document).ready(getItem);
 })
+
